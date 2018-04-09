@@ -1,3 +1,15 @@
+/**
+ *
+ *  ITEC 4260
+ *  Dr. Im
+ *  Georgia Gwinnett College
+ *
+ *  Project 2: Real World System Testing with Selenium
+ *
+ *  Created by Henry Huynh
+ *  Date: 4/09/2018
+ */
+
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -10,7 +22,7 @@ import org.openqa.selenium.support.ui.*;
 // Declaring class name
 public class EbayFeeCalculatorPart1 {
 
-    // Declaring instance of WebElement and WebDriver objecys
+    // Declaring instance of WebElement and WebDriver objects
     public static WebDriver driver;
     public static WebElement category;
     public static WebElement category1;
@@ -29,7 +41,7 @@ public class EbayFeeCalculatorPart1 {
     public static WebElement calculate;
 
 
-    // Implementing test method and creating a intializeDriver method
+    // Implementing test method and creating a initialize Driver method
     @BeforeClass
     public static void initializeDriver() throws Exception {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Software Development\\Downloads\\chromedriver.exe");
@@ -90,6 +102,7 @@ public class EbayFeeCalculatorPart1 {
         calculate.click();
     }
 
+    // Testing method with Asset.equals
     @Test
     public void testEbayFees() throws InterruptedException {
         Thread.sleep(3000);
@@ -98,7 +111,7 @@ public class EbayFeeCalculatorPart1 {
 
         double expected = 767.10;
         double actual = total;
-        double delta = 0;
+        double delta = actual - expected ;
 
         Assert.assertEquals(expected,actual,delta);
     }
